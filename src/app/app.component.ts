@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'upay-covid';
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    console.log("data");
+    this.dataService.getO2Cylinders().subscribe(console.log);
+  }
 }
