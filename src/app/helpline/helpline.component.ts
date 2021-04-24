@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'helpline',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./helpline.component.css'],
 })
 export class HelplineComponent implements OnInit {
+  @Input() name = '';
+  @Input() contactNumber = '';
+  @Input() availability = '';
   constructor() {}
 
   ngOnInit(): void {}
