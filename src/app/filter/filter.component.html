@@ -3,7 +3,7 @@
         <h4>Select City</h4>
         <mat-form-field appearance="fill">
         <mat-label>City</mat-label>
-        <mat-select [(value)]="selectedCity">
+        <mat-select [(value)]="selectedCity" (selectionChange)="onCityChange()">
             <mat-option *ngFor="let city of cities" [value]="city">
             {{city | titlecase}}
             </mat-option>
@@ -14,8 +14,8 @@
         <h4>Select Resource</h4>
         <mat-form-field appearance="fill">
         <mat-label>Resource</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let res of resources" [value]="res.value">
+        <mat-select [(value)]="selectedResource" (selectionChange)="onResourceChange()">
+            <mat-option *ngFor="let res of resources" [value]="res">
             {{res.viewValue | titlecase}}
             </mat-option>
         </mat-select>
