@@ -1,0 +1,23 @@
+.helpline-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .helpline-container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 481px) {
+  .helpline-container {
+    width: 800px;
+  }
+}
