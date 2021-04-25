@@ -10,11 +10,13 @@ import { HelplineComponent } from './helpline/helpline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HelplinelistComponent } from './helplinelist/helplinelist.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
-  declarations: [AppComponent, HelplineComponent, HelplinelistComponent],
+  declarations: [AppComponent, HelplineComponent, HelplinelistComponent, FilterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +25,7 @@ import { HelplinelistComponent } from './helplinelist/helplinelist.component';
     HttpClientModule,
     MatCardModule,
     MatGridListModule,
+    MatSelectModule
   ],
   providers: [GoogleSheetsDbService, DataService],
   bootstrap: [AppComponent],
