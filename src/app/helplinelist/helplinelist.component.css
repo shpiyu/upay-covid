@@ -13,6 +13,7 @@
 @media (max-width: 480px) {
   .helpline-container {
     flex-direction: column;
+    width: 90%;
   }
 
   .helpline-item {
