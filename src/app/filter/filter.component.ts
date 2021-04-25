@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 import { City } from '../models/city';
 import { ResourceType } from '../models/resource-types';
 
@@ -26,9 +27,12 @@ export class FilterComponent implements OnInit {
     { viewValue: 'Testing Labs', value: ResourceType.testingLabs }
   ];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getCityList().subscribe(
+      cities => this.cities = cities,
+      error => console.error("Could not fetch city list", error));
   }
 
 }

@@ -44,6 +44,10 @@ export class DataService {
       )));
   }
 
+  getCityList(): Observable<string[]> {
+    return this.getCityWorksheetMap().pipe(map(worksheets => worksheets.map(worksheet => worksheet.city)));
+  }
+
   private getCityWorksheetMap(): Observable<CityWorksheetMap[]> {
     return this.getWorksheets().pipe(tap((worksheets) => {
       if (this.cityWorksheetMapping.size == 0) {
