@@ -8,6 +8,6 @@ import { Resource } from '../models/resource';
   styleUrls: ['./helplinedialog.component.css'],
 })
 export class HelplinedialogComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Resource) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Object) {}
   ngOnInit(): void {}
 }
