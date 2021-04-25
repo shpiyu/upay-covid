@@ -1,9 +1,7 @@
-export interface GenMed {
-    id: string,
+import { Resource } from './resource';
+
+export interface GenMed extends Resource{
     shop: string,
-    name: string,
-    phone: string,
-    location: string,
     conditions: string,
     source: string,
     homeDelivery: string,

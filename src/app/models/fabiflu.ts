@@ -1,9 +1,7 @@
-export interface Fabiflu {
-    id: string,
+import { Resource } from './resource';
+
+export interface Fabiflu extends Resource{
     shop: string,
-    name: string,
-    phone: string,
-    location: string,
     conditions: string,
     preRequirement: string,
     source: string,

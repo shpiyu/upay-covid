@@ -1,9 +1,7 @@
-export interface Meal {
-    id: string,
+import { Resource } from './resource';
+
+export interface Meal extends Resource{
     description: string,
-    name: string,
-    phone: string,
-    location: string,
     availableQuanity: string,
     cost: string,
     conditions: string,

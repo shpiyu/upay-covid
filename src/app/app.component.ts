@@ -13,6 +13,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     console.log("data");
-    this.dataService.getO2Cylinders().subscribe(console.log);
+    this.dataService.getResourceByCity('','').subscribe(console.log);
   }
 }

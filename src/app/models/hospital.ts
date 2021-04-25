@@ -1,9 +1,7 @@
-export interface Hospital {
-    id: string,
+import { Resource } from './resource';
+
+export interface Hospital extends Resource{
     poc: string,
-    name: string,
-    phone: string,
-    location: string,
     oxygen: string,
     nonOxygen: string,
     icu: string,

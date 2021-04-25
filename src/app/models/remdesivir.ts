@@ -1,9 +1,7 @@
-export interface Remdesivir {
-    id: string,
+import { Resource } from './resource';
+
+export interface Remdesivir extends Resource {
     shop: string,
-    name: string,
-    phone: string,
-    location: string,
     conditions: string,
     preRequirement: string,
     verifiedAt: string,

@@ -1,9 +1,7 @@
-export interface O2Refill {
-    id: string,
+import { Resource } from './resource';
+
+export interface O2Refill extends Resource{
     description: string,
-    name: string,
-    phone: string,
-    location: string,
     availableQuanity: string,
     cost: string,
     conditions: string,

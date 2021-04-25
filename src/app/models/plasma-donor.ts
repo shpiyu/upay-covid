@@ -1,9 +1,7 @@
-export interface PlasmaDonor {
-    id: string,
+import { Resource } from './resource';
+
+export interface PlasmaDonor extends Resource {
     donorVolunteer: string,
-    name: string,
-    phone: string,
-    location: string,
     bloodGroup: string,
     covidNegativeOn: string,
     conditions: string,

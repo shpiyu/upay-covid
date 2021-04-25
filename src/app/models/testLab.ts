@@ -1,9 +1,7 @@
-export interface TestLab {
-    id: string,
+import { Resource } from './resource';
+
+export interface TestLab extends Resource {
     description: string,
-    name: string,
-    phone: string,
-    location: string,
     availableFacilities: string,
     cost: string,
     conditions: string,
