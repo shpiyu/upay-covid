@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+import { ResourceType } from './models/resource-types';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     console.log("data");
-    this.dataService.getResourceDataByCity('pune','').subscribe(console.log);
+    this.dataService.getResourceDataByCity('pune', ResourceType.o2cylinders).subscribe(console.log);
   }
 }

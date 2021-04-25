@@ -1,4 +1,4 @@
-export const FabifluMapping = {
+export const fabifluMapping = {
     id: 'S. No',
     shop: 'Shop/Vendor',
     name: 'Medicine Name',
