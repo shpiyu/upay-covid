@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
+import * as EventEmitter from 'events';
+import { error } from 'protractor';
 import { DataService } from '../data.service';
 import { City } from '../models/city';
 import { ResourceType } from '../models/resource-types';
@@ -13,9 +15,9 @@ interface ResourceValue {
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
-export class FilterComponent implements OnInit {
-
-  cities: string[] = ['pune', 'delhi']
+export class FilterComponent implements OnInit, OnChanges {
+  
+  cities: string[] = []
   resources: ResourceValue[] = [
     { viewValue: 'Oxygen Cylinders', value: ResourceType.o2cylinders },
     { viewValue: 'Meals', value: ResourceType.meals },
@@ -27,12 +29,22 @@ export class FilterComponent implements OnInit {
     { viewValue: 'Testing Labs', value: ResourceType.testingLabs }
   ];
 
+  selectedCity: String = '';
+  selectedResourceValue: ResourceValue = this.resources[0];
+
+  // @Output() cityChange = new EventEmitter();
+  // @Output() resourceChange = new 
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getCityList().subscribe(
       cities => this.cities = cities,
       error => console.error("Could not fetch city list", error));
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 
 }

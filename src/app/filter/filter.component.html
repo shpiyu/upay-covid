@@ -3,7 +3,7 @@
         <h4>Select City</h4>
         <mat-form-field appearance="fill">
         <mat-label>City</mat-label>
-        <mat-select>
+        <mat-select [(value)]="selectedCity">
             <mat-option *ngFor="let city of cities" [value]="city">
             {{city | titlecase}}
             </mat-option>
