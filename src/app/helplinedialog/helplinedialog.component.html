@@ -1,11 +1,28 @@
 <h2 mat-dialog-title>Helpline Details</h2>
 <mat-dialog-content class="mat-typography">
-  <h3>Name</h3>
+  <!-- <h3>Name</h3>
   <p>{{ data.name }}</p>
 
   <h3>Contact Number</h3>
   <p>{{ data.phone }}</p>
 
   <h3>Address</h3>
-  <p>{{ data.location }}</p>
+  <p>{{ data.location }}</p> -->
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>{{ data.name }}</td>
+    </tr>
+    <tr>
+      <th>Number</th>
+      <td>{{ data.phone }}</td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td>
+        {{ data.location }}
+      </td>
+    </tr>
+  </table>
 </mat-dialog-content>
