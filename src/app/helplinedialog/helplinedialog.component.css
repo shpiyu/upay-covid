@@ -1,3 +1,14 @@
-p {
+td {
   word-break: break-all;
+}
+
+.address {
+  vertical-align: center;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
