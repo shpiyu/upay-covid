@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { defaulHelpline, Helpline } from './helpline.model';
+import { MatDialog } from '@angular/material/dialog';
+import { HelplinedialogComponent } from '../helplinedialog/helplinedialog.component';
 
 @Component({
   selector: 'helpline',
@@ -8,7 +10,13 @@ import { defaulHelpline, Helpline } from './helpline.model';
 })
 export class HelplineComponent implements OnInit {
   @Input() helpline: Helpline = defaulHelpline;
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(HelplinedialogComponent, {
+      data: this.helpline,
+    });
+  }
 }

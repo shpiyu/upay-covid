@@ -20,13 +20,14 @@ export class HelplinelistComponent implements OnInit {
       {
         name: 'Srishti Hopital',
         contactNumber: 'xxxxxxxxxx',
-        address: 'ajlsdhlaksdhkasgdhkajsdhkjlasdhkjag',
+        address: 'kasdgakjshgdjadgskjagshdkjasgdjhagsdjash',
         lastVerified: new Date(),
       },
       {
         name: 'NA',
         contactNumber: 'xxxxxxxxxx',
-        address: 'NA',
+        address:
+          'kasdgakjshgdjadgskjagshdkjasgdjhagsdjashaskdhalksjdhlakjsdhklajsdhkajsdhlkajsdhlkl',
         lastVerified: new Date(),
       },
       {
