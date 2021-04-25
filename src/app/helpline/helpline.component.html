@@ -1,15 +1,13 @@
 <mat-card (click)="openDialog()" class="helpline-item">
-  <b>{{ helpline.name }}</b>
+  <b>{{ resource.name }}</b>
   <p>
-    Contact Number : {{ helpline.contactNumber }}
+    Contact Number : {{ resource.phone }}
     <br />
     Address :
     {{
-      helpline.address.length > 22
-        ? (helpline.address | slice: 0:22) + "..."
-        : helpline.address
+      resource.location.length > 22
+        ? (resource.location | slice: 0:22) + "..."
+        : resource.location
     }}
-    <br />
-    Last verfied :{{ helpline.lastVerified | date }}
-  </p></mat-card
->
+    <br /></p
+></mat-card>

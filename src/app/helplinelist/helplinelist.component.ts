@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { defaulHelpline, Helpline } from '../helpline/helpline.model';
+import { DataService } from '../data.service';
+import { Resource } from '../models/resource';
+import { ResourceType } from '../models/resource-types';
 
 @Component({
   selector: 'helpline-list',
@@ -7,41 +9,19 @@ import { defaulHelpline, Helpline } from '../helpline/helpline.model';
   styleUrls: ['./helplinelist.component.css'],
 })
 export class HelplinelistComponent implements OnInit {
-  helplineList: Helpline[];
+  resourceList: Resource[] = [];
 
-  constructor() {
-    this.helplineList = this.getHelplines();
-  }
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
-
-  getHelplines(): Helpline[] {
-    return [
-      {
-        name: 'Srishti Hopital',
-        contactNumber: 'xxxxxxxxxx',
-        address: 'kasdgakjshgdjadgskjagshdkjasgdjhagsdjash',
-        lastVerified: new Date(),
-      },
-      {
-        name: 'NA',
-        contactNumber: 'xxxxxxxxxx',
-        address:
-          'kasdgakjshgdjadgskjagshdkjasgdjhagsdjashaskdhalksjdhlakjsdhklajsdhkajsdhlkajsdhlkl',
-        lastVerified: new Date(),
-      },
-      {
-        name: 'NA',
-        contactNumber: 'xxxxxxxxxx',
-        address: 'NA',
-        lastVerified: new Date(),
-      },
-      {
-        name: 'NA',
-        contactNumber: 'xxxxxxxxxx',
-        address: 'NA',
-        lastVerified: new Date(),
-      },
-    ];
+  ngOnInit(): void {
+    this.dataService
+      .getResourceDataByCity('pune', ResourceType.o2cylinders)
+      .subscribe(
+        (resources) => (this.resourceList = resources),
+        (error) =>
+          console.error(
+            `Error fetching resource list for city '${'pune'}' and resource type '${ResourceType.o2cylinders.toString()}'`
+          )
+      );
   }
 }

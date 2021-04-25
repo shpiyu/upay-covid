@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Helpline } from '../helpline/helpline.model';
+import { Resource } from '../models/resource';
 
 @Component({
   selector: 'app-helplinedialog',
@@ -8,6 +8,6 @@ import { Helpline } from '../helpline/helpline.model';
   styleUrls: ['./helplinedialog.component.css'],
 })
 export class HelplinedialogComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Helpline) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Resource) {}
   ngOnInit(): void {}
 }
