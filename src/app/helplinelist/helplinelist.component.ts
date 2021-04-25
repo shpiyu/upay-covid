@@ -34,6 +34,7 @@ export class HelplinelistComponent implements OnInit, OnChanges {
         (resources) => {
           this.resourceList = resources;
           console.log(`Successfully fetched data for city '${this.city}' and resource type '${this.resourceType}'`);
+          console.log(resources);
         },
         (error) => {
           this.resourceList = [];

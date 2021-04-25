@@ -36,7 +36,7 @@ export class DataService {
   constructor(private googleSheetDbService: GoogleSheetsDbService) {}
 
   getResourceDataByCity(city: string, resourceType: ResourceType): Observable<Resource[]> {    
-    return this.getCityWorksheetMap().pipe(map(worksheets => worksheets.find(worksheet => worksheet.city = city)),
+    return this.getCityWorksheetMap().pipe(map(worksheets => worksheets.find(worksheet => worksheet.city == city)),
       mergeMap(cityWorkSheet => this.googleSheetDbService.get<Resource>(
         cityWorkSheet?.worksheetId || '',
         resourceType,

@@ -9,15 +9,12 @@ import { ResourceType } from './models/resource-types';
 })
 export class AppComponent {
   title = 'upay-covid';
-  currentCity = 'pune';
+  currentCity = 'Pune';
   currentResourceType = ResourceType.o2cylinders;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    console.log("data");
-    this.dataService.getResourceDataByCity('pune', ResourceType.o2cylinders).subscribe(console.log);
-  }
+  ngOnInit(): void {}
 
   onCityChange(city: string) {
     console.log(city);
