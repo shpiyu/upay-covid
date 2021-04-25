@@ -12,9 +12,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HelplinelistComponent } from './helplinelist/helplinelist.component';
+import { HelplinedialogComponent } from './helplinedialog/helplinedialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, HelplineComponent, HelplinelistComponent],
+  declarations: [
+    AppComponent,
+    HelplineComponent,
+    HelplinelistComponent,
+    HelplinedialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +30,7 @@ import { HelplinelistComponent } from './helplinelist/helplinelist.component';
     HttpClientModule,
     MatCardModule,
     MatGridListModule,
+    MatDialogModule,
   ],
   providers: [GoogleSheetsDbService, DataService],
   bootstrap: [AppComponent],
