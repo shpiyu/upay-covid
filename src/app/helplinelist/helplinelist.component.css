@@ -14,10 +14,18 @@
   .helpline-container {
     flex-direction: column;
   }
+
+  .helpline-item {
+    width: 100%;
+  }
 }
 
 @media (min-width: 481px) {
   .helpline-container {
     width: 800px;
+  }
+
+  .helpline-item {
+    width: 50%;
   }
 }

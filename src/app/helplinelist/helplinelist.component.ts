@@ -7,16 +7,40 @@ import { defaulHelpline, Helpline } from '../helpline/helpline.model';
   styleUrls: ['./helplinelist.component.css'],
 })
 export class HelplinelistComponent implements OnInit {
-  helplineList: Helpline[] = [
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-  ];
+  helplineList: Helpline[];
 
-  constructor() {}
+  constructor() {
+    this.helplineList = this.getHelplines();
+  }
 
   ngOnInit(): void {}
+
+  getHelplines(): Helpline[] {
+    return [
+      {
+        name: 'Srishti Hopital',
+        contactNumber: 'xxxxxxxxxx',
+        address: 'ajlsdhlaksdhkasgdhkajsdhkjlasdhkjag',
+        lastVerified: new Date(),
+      },
+      {
+        name: 'NA',
+        contactNumber: 'xxxxxxxxxx',
+        address: 'NA',
+        lastVerified: new Date(),
+      },
+      {
+        name: 'NA',
+        contactNumber: 'xxxxxxxxxx',
+        address: 'NA',
+        lastVerified: new Date(),
+      },
+      {
+        name: 'NA',
+        contactNumber: 'xxxxxxxxxx',
+        address: 'NA',
+        lastVerified: new Date(),
+      },
+    ];
+  }
 }

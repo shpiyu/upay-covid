@@ -8,6 +8,7 @@ export interface Helpline {
 export const defaulHelpline: Helpline = {
   name: 'NA',
   contactNumber: 'xxxxxxxxxx',
-  address: 'Flat No, Street name, Locality, City',
+  //address: 'Flat No, Street name, Locality, City12345',
+  address: 'NA',
   lastVerified: new Date(),
 };
