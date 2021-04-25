@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { defaulHelpline, Helpline } from './helpline.model';
+import { Resource } from '../models/resource';
 
 @Component({
   selector: 'helpline',
@@ -7,7 +7,8 @@ import { defaulHelpline, Helpline } from './helpline.model';
   styleUrls: ['./helpline.component.css'],
 })
 export class HelplineComponent implements OnInit {
-  @Input() helpline: Helpline = defaulHelpline;
+  @Input() resource: Resource = {id: '', name: '', location: '', phone: '' };
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { defaulHelpline, Helpline } from '../helpline/helpline.model';
+import { DataService } from '../data.service';
+import { Resource } from '../models/resource';
+import { ResourceType } from '../models/resource-types';
 
 @Component({
   selector: 'helpline-list',
@@ -7,16 +9,14 @@ import { defaulHelpline, Helpline } from '../helpline/helpline.model';
   styleUrls: ['./helplinelist.component.css'],
 })
 export class HelplinelistComponent implements OnInit {
-  helplineList: Helpline[] = [
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-    defaulHelpline,
-  ];
+  resourceList: Resource[] = []
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.getResourceDataByCity('pune', ResourceType.o2cylinders).subscribe(
+      resources => this.resourceList = resources,
+      error => console.error(`Error fetching resource list for city '${'pune'}' and resource type '${ResourceType.o2cylinders.toString()}'`)
+    );
+  }
 }
