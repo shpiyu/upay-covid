@@ -1,35 +1,59 @@
 import { Injectable } from '@angular/core';
 import { GoogleSheetsDbService } from 'ng-google-sheets-db';
-import { Observable } from 'rxjs';
+import { asapScheduler, Observable, of, scheduled } from 'rxjs';
+import { map, mergeMap, tap } from 'rxjs/operators';
+
 import { o2CylinderMapping } from './models/mappings/o2cylinder-mapping';
-import { O2Cylinder } from './models/o2cylinder';
 import { Resource } from './models/resource';
+
+interface CityWorksheetMap {
+  city: string;
+  worksheetId: string;
+}
+
+const cityWorksheetMapping = {
+  city: 'city',
+  worksheetId: 'worksheetID'
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  cityWorksheetMappingId: string = '1s4bI6gqFsKor1iWa3zCU6FjIizokJJJEjEWfGoK48zY';
+  cityWorksheetMapping: Map<String, String> = new Map();
+
   constructor(private googleSheetDbService: GoogleSheetsDbService) {}
 
-  getO2Cylinders(): Observable<O2Cylinder[]> {
-    return this.googleSheetDbService.get<O2Cylinder>(
-      '1o9F0VNjYwwjAjbBX_3vteJoCwE36LOARx7Xs62dZVYY',
-      'O2 Cylinder',
-      o2CylinderMapping);
+  getResourceDataByCity(city: string, resourceType: string): Observable<Resource[]> {    
+    return this.getCityWorksheetMap().pipe(map(worksheets => worksheets.find(worksheet => worksheet.city = city)),
+      mergeMap(cityWorkSheet => this.googleSheetDbService.get<Resource>(
+        cityWorkSheet?.worksheetId || '',
+        this.getSheetId(resourceType),
+        this.getMapping(resourceType)
+      )));
   }
 
-  getResourceByCity(resourceType: string, city: string): Observable<Resource[]> {
-    return this.googleSheetDbService.get<Resource>(
-      this.getWorksheetId(city, resourceType),
-      this.getSheetId(resourceType),
-      this.getMapping(resourceType)
+  private getCityWorksheetMap(): Observable<CityWorksheetMap[]> {
+    return this.getWorksheets().pipe(tap((worksheets) => {
+      if (this.cityWorksheetMapping.size == 0) {
+        worksheets.forEach(worksheet => this.cityWorksheetMapping.set(worksheet.city, worksheet.worksheetId));
+      }
+      return scheduled(this.cityWorksheetMapping, asapScheduler);
+    }, (error) => {
+      console.error("Error getting city worksheet mapping");
+    }));
+    
+  }
+
+  // gets worksheet ids for each city
+  private getWorksheets(): Observable<CityWorksheetMap[]> {
+    return this.googleSheetDbService.get<CityWorksheetMap>(
+      this.cityWorksheetMappingId,
+      1,
+      cityWorksheetMapping
     );
-  }
-
-  private getWorksheetId(city: string, resourceType: string): string {
-    // todo
-    return '1o9F0VNjYwwjAjbBX_3vteJoCwE36LOARx7Xs62dZVYY';
   }
 
   private getSheetId(resourceType: string): number {

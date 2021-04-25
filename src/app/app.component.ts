@@ -13,6 +13,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     console.log("data");
-    this.dataService.getResourceByCity('','').subscribe(console.log);
+    this.dataService.getResourceDataByCity('pune','').subscribe(console.log);
   }
 }
