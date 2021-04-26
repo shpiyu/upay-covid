@@ -1,0 +1,14 @@
+.main {
+    padding: 8px;
+}
+.content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.disclaimer {
+    padding: 12px;
+    background: #fbe49f;
+    border: 1px solid #ff6000;
+    border-radius: 12px;
+}
