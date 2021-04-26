@@ -1,4 +1,14 @@
 .filter-drop-down {
     display: inline-block;
-    margin-right: 10px;
+    width: 45%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .filter-drop-down {
+        width: 100%;
+    }
 }

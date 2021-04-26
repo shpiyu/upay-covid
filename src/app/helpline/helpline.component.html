@@ -1,13 +1,16 @@
-<mat-card (click)="openDialog()" class="helpline-item">
-  <b>{{ resource.name }}</b>
-  <p>
-    Contact Number : {{ resource.phone }}
-    <br />
-    Address :
-    {{
-      resource.location.length > 22
-        ? (resource.location | slice: 0:22) + "..."
-        : resource.location
-    }}
-    <br /></p
-></mat-card>
+<div class="helpline-card column">
+  <mat-card (click)="openDialog()" class="helpline-item">
+    <div class="resource-name">{{ resource.name }}</div>
+    <div>
+      <b>Contact Number</b>: {{ resource.phone }}
+    </div>
+    <div>
+      <b>Address</b>:
+      {{
+        resource.location.length > 22
+          ? (resource.location | slice: 0:22) + "..."
+          : resource.location
+      }}
+    </div>
+  </mat-card>
+</div>
