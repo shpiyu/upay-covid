@@ -1,9 +1,11 @@
-<div class="container">
-  <div class="helpline-container">
-    <helpline
-      class="helpline-item"
-      *ngFor="let resource of resourceList"
-      [resource]="resource"
-    ></helpline>
-  </div>
+<div class="helpline-list row">
+  <!-- <div class="container"> -->
+    <div class="helpline-container">
+      <helpline
+        class="helpline-item"
+        *ngFor="let resource of resourceList"
+        [resource]="resource"
+      ></helpline>
+    </div>
+  <!-- </div> -->
 </div>
