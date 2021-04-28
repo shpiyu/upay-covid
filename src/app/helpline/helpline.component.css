@@ -17,3 +17,13 @@
 mat-card {
   height: 80%;
 }
+
+.call-btn {
+  display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .call-btn {
+    display: inline-block;
+  }
+}

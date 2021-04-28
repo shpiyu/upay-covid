@@ -15,6 +15,7 @@
     </div>
     </div>
     <div class="action-container">
+      <a class="call-btn" mat-button color="primary" *ngIf = "resource.phone" href="tel:{{resource.phone}}">CALL</a>
       <a class="direction-btn" mat-button color="primary" *ngIf = "directionUrl" href="{{directionUrl}}" target="_blank">GET DIRECTION</a>
     </div>
   </mat-card>
