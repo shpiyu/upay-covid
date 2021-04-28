@@ -10,5 +10,6 @@ export const hospitalMapping = {
     ventilators: 'Ventilator',
     source: 'Source(Website/Social media)',
     verifiedAt: 'Verification',
-    verifiedBy: 'Verified By'
+    verifiedBy: 'Verified By',
+    direction: 'GPS Location'
 }
