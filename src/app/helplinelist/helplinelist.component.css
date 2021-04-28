@@ -4,8 +4,13 @@
 .helpline-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
 	grid-column-gap: 25px;
-	grid-row-gap: 25px;
+  grid-row-gap: 25px;
+}
+
+.helpline-item {
+  height: 100%;
 }
 
 @media screen and (max-width: 1200px) {

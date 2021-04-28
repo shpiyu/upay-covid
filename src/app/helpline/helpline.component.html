@@ -1,6 +1,7 @@
-<div class="helpline-card column">
+<div class="helpline-card">
   <mat-card (click)="openDialog()" class="helpline-item">
-    <div class="resource-name">{{ resource.name }}</div>
+    <div>
+      <div class="resource-name">{{ resource.name }}</div>
     <div>
       <b>Contact Number</b>: {{ resource.phone }}
     </div>
@@ -11,6 +12,10 @@
           ? (resource.location | slice: 0:22) + "..."
           : resource.location
       }}
+    </div>
+    </div>
+    <div class="action-container">
+      <a class="direction-btn" mat-button color="primary" *ngIf = "directionUrl" href="{{directionUrl}}" target="_blank">GET DIRECTION</a>
     </div>
   </mat-card>
 </div>

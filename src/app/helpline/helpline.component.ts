@@ -13,8 +13,13 @@ import { Resource } from '../models/resource';
 export class HelplineComponent implements OnInit {
   @Input() resource: Resource = { id: '', name: '', location: '', phone: '' };
   ignoredKeys: string[] = ["id", "direction"];
+  directionUrl: string | undefined;
+
   constructor(public dialog: MatDialog) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.resource.hasOwnProperty('direction')) 
+      this.directionUrl = this.resource.direction;
+  } 
 
   openDialog() {
     const dialogRef = this.dialog.open(HelplinedialogComponent, {

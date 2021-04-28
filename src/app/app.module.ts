@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HelplineComponent } from './helpline/helpline.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -35,7 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [GoogleSheetsDbService, DataService],
   bootstrap: [AppComponent],

@@ -4,3 +4,16 @@
   margin-bottom: 10px;
   text-transform: capitalize;
 }
+
+.action-container {
+  padding-top: 12px;
+  text-align: end;
+}
+
+.helpline-card {
+  height: 100%;
+}
+
+mat-card {
+  height: 80%;
+}
