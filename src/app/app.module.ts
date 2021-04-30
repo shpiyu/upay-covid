@@ -17,6 +17,7 @@ import { HelplinelistComponent } from './helplinelist/helplinelist.component';
 import { FilterComponent } from './filter/filter.component';
 import { HelplinedialogComponent } from './helplinedialog/helplinedialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HelplineComponent,
     HelplinelistComponent,
     HelplinedialogComponent,
-    FilterComponent
+    FilterComponent,
   ],
 
   imports: [
@@ -37,7 +38,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatGridListModule,
     MatSelectModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule,
   ],
   providers: [GoogleSheetsDbService, DataService],
   bootstrap: [AppComponent],
